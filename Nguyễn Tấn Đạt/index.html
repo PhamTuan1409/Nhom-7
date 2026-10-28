@@ -1,0 +1,1792 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio cá nhân Nguyễn Tấn Đạt">
+<title>Nguyễn Tấn Đạt | Portfolio Pro</title>
+
+<style>
+/* ==============================
+   DARK MODERN PORTFOLIO PRO
+   ============================== */
+
+:root {
+    --bg: #090b17;
+    --card: #12172b;
+    --card2: #1b213a;
+    --text: #f4f4ff;
+    --muted: #a4abc5;
+    --purple: #a855f7;
+    --blue: #6965ff;
+    --cyan: #4de3ff;
+    --border: rgba(168,85,247,.22);
+    --track: #2c324c;
+}
+
+body.light {
+    --bg: #f5f6ff;
+    --card: #ffffff;
+    --card2: #ebecfc;
+    --text: #22243d;
+    --muted: #626985;
+    --purple: #8336d9;
+    --blue: #6156dd;
+    --border: rgba(100,80,220,.2);
+    --track: #e3e5f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 105px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: background .3s, color .3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg,
+        var(--purple), var(--cyan));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* ==============================
+   BACKGROUND
+   ============================== */
+
+#mouseGlow {
+    position: fixed;
+    width: 430px;
+    height: 430px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        rgba(168,85,247,.13),
+        transparent 68%);
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+body > section,
+body > footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(18px);
+    background: rgba(9,11,23,.9);
+    border-bottom: 1px solid var(--border);
+}
+
+body.light header {
+    background: rgba(255,255,255,.9);
+}
+
+nav {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--purple);
+}
+
+.theme-btn {
+    padding: 9px 13px;
+    background: var(--card2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* ==============================
+   HERO
+   ============================== */
+
+.hero {
+    min-height: 88vh;
+    padding: 90px 0;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(
+        circle at 75% 35%,
+        rgba(168,85,247,.14),
+        transparent 45%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.hello {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    background: rgba(168,85,247,.08);
+    color: var(--purple);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px,5.5vw,70px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.typing-line {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    min-height: 36px;
+}
+
+#typingText {
+    color: var(--cyan);
+}
+
+.cursor {
+    color: var(--purple);
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    min-height: 46px;
+    border-radius: 11px;
+    border: 1px solid var(--purple);
+    background: linear-gradient(135deg,
+        var(--blue), var(--purple));
+    color: white;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px rgba(168,85,247,.35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+}
+
+/* ==============================
+   AVATAR
+   ============================== */
+
+.profile-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 410px;
+}
+
+.profile-ring {
+    width: 340px;
+    height: 340px;
+    padding: 9px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--purple),
+        var(--blue),
+        var(--cyan),
+        var(--purple));
+    box-shadow:
+        0 0 50px rgba(168,85,247,.35),
+        0 0 90px rgba(105,101,255,.15);
+    animation: float 5s ease-in-out infinite;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 7px solid var(--bg);
+    background: var(--card);
+}
+
+.profile-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 34% 55%;
+    transition: transform .5s;
+}
+
+.profile-ring:hover img {
+    transform: scale(1.08);
+}
+
+.float-label {
+    position: absolute;
+    padding: 11px 17px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    animation: float 4s ease-in-out infinite;
+}
+
+.label-top {
+    right: 0;
+    top: 35px;
+}
+
+.label-bottom {
+    left: 0;
+    bottom: 40px;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+
+/* ==============================
+   SECTIONS
+   ============================== */
+
+section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.kicker {
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.section-title {
+    font-size: clamp(28px,4vw,40px);
+    margin: 10px 0;
+}
+
+.subtitle {
+    color: var(--muted);
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 19px;
+    transition: transform .3s, border-color .3s;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--purple);
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+/* ==============================
+   ABOUT
+   ============================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 110px minmax(0,1fr);
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    overflow-wrap: anywhere;
+}
+
+.info-item span,
+.info-item a {
+    color: var(--muted);
+}
+
+.info-item a:hover {
+    color: var(--purple);
+}
+
+/* ==============================
+   HIGHLIGHTS
+   ============================== */
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.highlight-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    border-radius: 15px;
+    background: rgba(168,85,247,.13);
+    margin-bottom: 20px;
+}
+
+/* ==============================
+   SKILLS
+   ============================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.skill {
+    margin: 23px 0;
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.skill-value {
+    color: var(--purple);
+}
+
+.progress {
+    height: 11px;
+    background: var(--track);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg,
+        var(--blue),var(--purple),var(--cyan));
+    border-radius: 30px;
+    transition: width 1.2s ease;
+}
+
+/* ==============================
+   PROJECTS
+   ============================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.project-image {
+    height: 165px;
+    border-radius: 14px;
+    background: linear-gradient(
+        135deg,#26215c,#571d69);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.project-card p {
+    min-height: 125px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 19px 0;
+}
+
+.tag {
+    background: rgba(168,85,247,.13);
+    color: var(--purple);
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-size: 12px;
+}
+
+.project-link {
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.project-note {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==============================
+   EDUCATION
+   ============================== */
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    border-left: 2px solid var(--purple);
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 0 0 16px var(--purple);
+}
+
+.timeline-date {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--purple);
+    margin-bottom: 10px;
+}
+
+/* ==============================
+   CONTACT
+   ============================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+}
+
+.contact-item {
+    background: var(--card2);
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow-wrap: anywhere;
+}
+
+.contact-item span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.contact-item a {
+    color: var(--purple);
+}
+
+input, textarea {
+    width: 100%;
+    background: var(--card2);
+    color: var(--text);
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--purple);
+}
+
+textarea {
+    min-height: 135px;
+    resize: vertical;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 13px;
+    background: var(--purple);
+    color: white;
+    font-size: 22px;
+    z-index: 100;
+}
+
+/* ==============================
+   SCROLL REVEAL
+   ============================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media(max-width:950px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 14px 0;
+    }
+
+    .nav-links {
+        order: 3;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .skills-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .profile-area {
+        order: -1;
+    }
+
+    .projects-grid,
+    .highlights-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:620px) {
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .profile-ring {
+        width: 235px;
+        height: 235px;
+    }
+
+    .profile-area {
+        min-height: 300px;
+    }
+
+    .float-label {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .card {
+        padding: 23px;
+    }
+
+    .projects-grid,
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .project-card p {
+        min-height: auto;
+    }
+}
+
+/* ==============================
+   PRINT PDF
+   ============================== */
+
+@media print {
+    :root {
+        --bg: #fff;
+        --card: #fff;
+        --card2: #fff;
+        --text: #111827;
+        --muted: #374151;
+        --border: #ddd;
+    }
+
+    header,
+    #mouseGlow,
+    #backToTop,
+    .buttons,
+    #contactForm,
+    .float-label {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: #111827 !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    section, .hero {
+        padding: 20px 0;
+        min-height: auto;
+    }
+
+    .card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .profile-ring {
+        width: 160px;
+        height: 160px;
+        animation: none;
+    }
+
+    .progress-bar {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="mouseGlow"></div>
+
+<!-- NAVIGATION -->
+<header>
+<nav class="container">
+
+    <a href="#home" class="logo">
+        Dat<span>Portfolio.</span>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#home">Trang chủ</a></li>
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#highlights">Điểm mạnh</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#education">Học vấn</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+
+    <button class="theme-btn"
+            id="themeToggle"
+            aria-label="Chuyển giao diện sáng tối">
+        ☀️
+    </button>
+
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+    <div class="reveal">
+
+        <div class="hello">
+            ✨ Welcome to my Portfolio
+        </div>
+
+        <h1>
+            Xin chào,<br>
+            Tôi là
+            <span class="gradient-text">
+                Nguyễn Tấn Đạt
+            </span>
+        </h1>
+
+        <div class="typing-line">
+            <span id="typingText"></span>
+            <span class="cursor">|</span>
+        </div>
+
+        <p>
+            Tôi là sinh viên ngành Công nghệ Thông tin
+            tại Trường Đại học Giao Thông Vận Tải.
+
+            Tôi yêu thích lập trình, thiết kế giao diện
+            website và khám phá các công nghệ mới.
+
+            Portfolio này giới thiệu thông tin cá nhân,
+            quá trình học tập, kỹ năng và
+            định hướng phát triển của tôi.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">
+                🚀 Xem dự án
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                👤 Về tôi
+            </a>
+
+            <button id="printCV" class="btn btn-outline">
+                📄 Lưu CV PDF
+            </button>
+        </div>
+
+    </div>
+
+    <!-- AVATAR -->
+    <div class="profile-area reveal">
+
+        <div class="profile-ring">
+            <div class="profile-avatar">
+                <img
+                    src="./image/avatar.png"
+                    alt="Ảnh cá nhân Nguyễn Tấn Đạt">
+            </div>
+        </div>
+
+        <div class="float-label label-top">
+            💻 IT Student
+        </div>
+
+        <div class="float-label label-bottom">
+            ✨ Learning Web Development
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="kicker">ABOUT ME</div>
+        <h2 class="section-title">
+            Giới thiệu
+            <span class="gradient-text">bản thân</span>
+        </h2>
+        <p class="subtitle">
+            Thông tin cá nhân và câu chuyện học tập
+        </p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="card reveal">
+            <h3>👨‍💻 Đôi nét về tôi</h3>
+
+            <p>
+                Xin chào! Tôi tên là
+                <strong>Nguyễn Tấn Đạt</strong>,
+                hiện đang theo học ngành
+                Công nghệ Thông tin tại
+                Trường Đại học Giao Thông Vận Tải.
+            </p>
+
+            <br>
+
+            <p>
+                Tôi đang từng bước học hỏi các kiến thức
+                về phát triển website, từ xây dựng
+                cấu trúc bằng HTML, thiết kế giao diện
+                bằng CSS đến tạo tính tương tác
+                với JavaScript.
+            </p>
+
+            <br>
+
+            <p>
+                Tôi mong muốn xây dựng nền tảng
+                lập trình vững chắc thông qua
+                các bài tập, dự án thực hành
+                và quá trình tự học.
+            </p>
+
+            <br>
+
+            <p>
+                Ngoài kỹ thuật, tôi cũng chú trọng
+                cải thiện khả năng giao tiếp,
+                làm việc nhóm, quản lý thời gian
+                và giải quyết vấn đề.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <h3>📋 Thông tin cá nhân</h3>
+
+            <div class="info-item">
+                <strong>Họ tên</strong>
+                <span>Nguyễn Tấn Đạt</span>
+            </div>
+
+            <div class="info-item">
+                <strong>MSSV</strong>
+                <span>052206000886</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Ngày sinh</strong>
+                <span>11/07/2006</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Trường</strong>
+                <span>
+                    Trường Đại học Giao Thông Vận Tải
+                </span>
+            </div>
+
+            <div class="info-item">
+                <strong>Ngành học</strong>
+                <span>Công nghệ Thông tin</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Email</strong>
+                <a href="mailto:datnt0886@ut.edu.vn">
+                    datnt0886@ut.edu.vn
+                </a>
+            </div>
+
+            <div class="info-item">
+                <strong>Địa chỉ</strong>
+                <span>TP. Hồ Chí Minh</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Định hướng</strong>
+                <span>Web Developer</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="kicker">PERSONAL DEVELOPMENT</div>
+
+        <h2 class="section-title">
+            Định hướng &
+            <span class="gradient-text">phát triển</span>
+        </h2>
+
+        <p class="subtitle">
+            Những điều tôi muốn rèn luyện
+            trong quá trình học Công nghệ Thông tin
+        </p>
+    </div>
+
+    <div class="highlights-grid">
+
+        <div class="card reveal">
+            <div class="highlight-icon">🧠</div>
+            <h3>Tư duy logic</h3>
+            <p>
+                Rèn luyện khả năng phân tích vấn đề,
+                chia nhỏ yêu cầu và tìm ra cách
+                giải quyết hợp lý thông qua lập trình.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <div class="highlight-icon">🎨</div>
+            <h3>Thiết kế giao diện</h3>
+            <p>
+                Tìm hiểu cách bố trí nội dung,
+                sử dụng màu sắc, kiểu chữ
+                và xây dựng trải nghiệm người dùng.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <div class="highlight-icon">🤝</div>
+            <h3>Làm việc nhóm</h3>
+            <p>
+                Học cách trao đổi ý tưởng,
+                phân chia nhiệm vụ, phối hợp
+                và hỗ trợ các thành viên.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <div class="highlight-icon">📚</div>
+            <h3>Tự học</h3>
+            <p>
+                Chủ động tìm hiểu tài liệu,
+                luyện tập kỹ năng mới
+                và học hỏi từ những lỗi sai.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <div class="highlight-icon">🛠️</div>
+            <h3>Thực hành dự án</h3>
+            <p>
+                Ứng dụng kiến thức đã học
+                vào các website thực tế,
+                từ đó nâng cao khả năng lập trình.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <div class="highlight-icon">🎯</div>
+            <h3>Mục tiêu nghề nghiệp</h3>
+            <p>
+                Phát triển nền tảng kỹ thuật,
+                tích lũy kinh nghiệm và
+                hướng tới nghề lập trình viên web.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="kicker">MY SKILLS</div>
+
+        <h2 class="section-title">
+            Kỹ năng
+            <span class="gradient-text">của tôi</span>
+        </h2>
+
+        <p class="subtitle">
+            Mức độ tự đánh giá trong quá trình học tập
+        </p>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="card reveal">
+            <h3>💻 Kỹ năng lập trình</h3>
+
+            <div class="skill" data-level="50">
+                <div class="skill-top">
+                    <span>HTML</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill" data-level="45">
+                <div class="skill-top">
+                    <span>CSS</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill" data-level="40">
+                <div class="skill-top">
+                    <span>JavaScript</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill" data-level="40">
+                <div class="skill-top">
+                    <span>Python</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <h3>🤝 Kỹ năng mềm</h3>
+
+            <div class="skill" data-level="50">
+                <div class="skill-top">
+                    <span>Làm việc nhóm</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill" data-level="45">
+                <div class="skill-top">
+                    <span>Giao tiếp</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill" data-level="40">
+                <div class="skill-top">
+                    <span>Giải quyết vấn đề</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="skill" data-level="50">
+                <div class="skill-top">
+                    <span>Quản lý thời gian</span>
+                    <span class="skill-value"></span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="kicker">MY PROJECTS</div>
+
+        <h2 class="section-title">
+            Dự án &
+            <span class="gradient-text">sản phẩm</span>
+        </h2>
+
+        <p class="subtitle">
+            Những sản phẩm thực hành và ý tưởng tương lai
+        </p>
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="card project-card reveal">
+            <div class="project-image">🌐</div>
+
+            <h3>Personal Portfolio</h3>
+
+            <p>
+                Website giới thiệu cá nhân
+                với giao diện Dark Modern,
+                hỗ trợ điện thoại,
+                hiệu ứng chuyển động,
+                chế độ sáng/tối và chức năng lưu PDF.
+            </p>
+
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+
+            <a href="#home" class="project-link">
+                Xem Portfolio ↗
+            </a>
+        </div>
+
+        <div class="card project-card reveal">
+            <div class="project-image">👨‍💻</div>
+
+            <h3>Website giới thiệu nhóm</h3>
+
+            <p>
+                Website nhóm trong môn Lập trình Web,
+                giới thiệu các thành viên,
+                phân công nhiệm vụ
+                và những nội dung nhóm học tập.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Teamwork</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+            </div>
+
+            <span class="project-note">
+                Dự án học tập
+            </span>
+        </div>
+
+        <div class="card project-card reveal">
+            <div class="project-image">🛒</div>
+
+            <h3>E-Commerce Website</h3>
+
+            <p>
+                Ý tưởng xây dựng website
+                bán hàng trực tuyến,
+                có danh sách sản phẩm,
+                trang chi tiết và chức năng giỏ hàng.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Web Design</span>
+                <span class="tag">JavaScript</span>
+            </div>
+
+            <span class="project-note">
+                Ý tưởng tương lai
+            </span>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="kicker">MY JOURNEY</div>
+
+        <h2 class="section-title">
+            Học vấn &
+            <span class="gradient-text">lộ trình</span>
+        </h2>
+
+        <p class="subtitle">
+            Hành trình học tập và mục tiêu phát triển
+        </p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="card timeline-item reveal">
+            <div class="timeline-date">HIỆN TẠI</div>
+
+            <h3>🎓 Sinh viên Công nghệ Thông tin</h3>
+
+            <p>
+                Trường Đại học Giao Thông Vận Tải.
+                MSSV: 052206000886.
+            </p>
+
+            <p>
+                Đang học kiến thức lập trình,
+                phát triển website,
+                cơ sở dữ liệu và các môn học chuyên ngành.
+            </p>
+        </div>
+
+        <div class="card timeline-item reveal">
+            <div class="timeline-date">
+                GIAI ĐOẠN RÈN LUYỆN
+            </div>
+
+            <h3>💻 Phát triển nền tảng Web</h3>
+
+            <p>
+                Tập trung tìm hiểu HTML, CSS,
+                JavaScript và kỹ năng sử dụng
+                VS Code, Git, GitHub.
+            </p>
+        </div>
+
+        <div class="card timeline-item reveal">
+            <div class="timeline-date">
+                MỤC TIÊU NGẮN HẠN
+            </div>
+
+            <h3>🚀 Hoàn thiện các dự án thực hành</h3>
+
+            <p>
+                Tự xây dựng thêm các website,
+                nâng cao khả năng thiết kế giao diện
+                và cải thiện kỹ năng giải quyết lỗi.
+            </p>
+        </div>
+
+        <div class="card timeline-item reveal">
+            <div class="timeline-date">
+                MỤC TIÊU DÀI HẠN
+            </div>
+
+            <h3>🎯 Trở thành Web Developer</h3>
+
+            <p>
+                Hướng tới công việc phát triển website,
+                có khả năng xây dựng sản phẩm
+                đáp ứng nhu cầu thực tế.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="kicker">CONTACT ME</div>
+
+        <h2 class="section-title">
+            Kết nối
+            <span class="gradient-text">với tôi</span>
+        </h2>
+
+        <p class="subtitle">
+            Thông tin liên hệ Nguyễn Tấn Đạt
+        </p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="card reveal">
+            <h3>📬 Thông tin liên hệ</h3>
+
+            <div class="contact-item">
+                <span>Họ và tên</span>
+                <strong>Nguyễn Tấn Đạt</strong>
+            </div>
+
+            <div class="contact-item">
+                <span>MSSV</span>
+                <strong>052206000886</strong>
+            </div>
+
+            <div class="contact-item">
+                <span>Email</span>
+                <a href="mailto:datnt0886@ut.edu.vn">
+                    datnt0886@ut.edu.vn
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <span>Trường</span>
+                <strong>
+                    Trường Đại học Giao Thông Vận Tải
+                </strong>
+            </div>
+
+            <div class="contact-item">
+                <span>GitHub</span>
+                <a href="https://github.com/datnt0886-eng"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    github.com/datnt0886-eng
+                </a>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <h3>✉️ Gửi lời nhắn</h3>
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Họ và tên"
+                    required>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Địa chỉ email"
+                    required>
+
+                <textarea
+                    id="message"
+                    placeholder="Nội dung tin nhắn..."
+                    required></textarea>
+
+                <button type="submit" class="btn">
+                    Gửi tin nhắn ↗
+                </button>
+
+                <p style="font-size:13px;margin-top:14px">
+                    Biểu mẫu mở ứng dụng email
+                    để xác nhận và gửi lời nhắn.
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Nguyễn Tấn Đạt</h3>
+
+    <p>
+        Sinh viên Công nghệ Thông tin
+        · MSSV: 052206000886
+    </p>
+
+    <p>
+        © <span id="year"></span>
+        DatPortfolio. HTML · CSS · JavaScript
+    </p>
+</footer>
+
+<button id="backToTop" aria-label="Lên đầu trang">
+    ↑
+</button>
+
+<script>
+/* ==============================
+   JAVASCRIPT
+   ============================== */
+
+// NĂM HIỆN TẠI
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+// CHỮ CHẠY TỰ ĐỘNG
+const texts = [
+    "Sinh viên Công nghệ Thông tin",
+    "Đang học HTML, CSS, JavaScript",
+    "Yêu thích thiết kế Website",
+    "Định hướng Web Developer"
+];
+
+const typingElement =
+    document.getElementById("typingText");
+
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeText() {
+    const current = texts[textIndex];
+
+    if (!deleting) {
+        charIndex++;
+    } else {
+        charIndex--;
+    }
+
+    typingElement.textContent =
+        current.substring(0, charIndex);
+
+    let speed = deleting ? 45 : 85;
+
+    if (!deleting && charIndex === current.length) {
+        deleting = true;
+        speed = 1700;
+    }
+
+    if (deleting && charIndex === 0) {
+        deleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        speed = 350;
+    }
+
+    setTimeout(typeText, speed);
+}
+
+if (!window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches) {
+    typeText();
+} else {
+    typingElement.textContent = texts[0];
+}
+
+
+// ÁNH SÁNG THEO CHUỘT
+const glow = document.getElementById("mouseGlow");
+
+if (window.matchMedia(
+    "(hover: hover) and (pointer: fine)"
+).matches) {
+    window.addEventListener("pointermove", function(e) {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+        glow.style.opacity = "1";
+    });
+}
+
+
+// HIỆU ỨNG XUẤT HIỆN
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+        function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.08 }
+    );
+
+    revealElements.forEach(function(element) {
+        observer.observe(element);
+    });
+} else {
+    revealElements.forEach(function(element) {
+        element.classList.add("visible");
+    });
+}
+
+
+// THANH KỸ NĂNG
+const skillItems =
+    document.querySelectorAll(".skill");
+
+skillItems.forEach(function(skill) {
+    const level = Math.min(
+        100,
+        Math.max(0, Number(skill.dataset.level) || 0)
+    );
+
+    skill.querySelector(".skill-value").textContent =
+        level + "%";
+});
+
+function showSkills() {
+    skillItems.forEach(function(skill) {
+        const level = Math.min(
+            100,
+            Math.max(0, Number(skill.dataset.level) || 0)
+        );
+
+        skill.querySelector(".progress-bar").style.width =
+            level + "%";
+    });
+}
+
+if ("IntersectionObserver" in window) {
+    const skillsObserver = new IntersectionObserver(
+        function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    showSkills();
+                    skillsObserver.disconnect();
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    skillsObserver.observe(
+        document.getElementById("skills")
+    );
+} else {
+    showSkills();
+}
+
+
+// CHẾ ĐỘ SÁNG TỐI
+const themeToggle =
+    document.getElementById("themeToggle");
+
+try {
+    if (localStorage.getItem("portfolioTheme") === "light") {
+        document.body.classList.add("light");
+    }
+} catch (e) {}
+
+function updateTheme() {
+    themeToggle.textContent =
+        document.body.classList.contains("light")
+        ? "🌙" : "☀️";
+}
+
+updateTheme();
+
+themeToggle.addEventListener("click", function() {
+    document.body.classList.toggle("light");
+
+    try {
+        localStorage.setItem(
+            "portfolioTheme",
+            document.body.classList.contains("light")
+            ? "light" : "dark"
+        );
+    } catch (e) {}
+
+    updateTheme();
+});
+
+
+// MENU ACTIVE
+const navLinks =
+    document.querySelectorAll(".nav-links a");
+
+navLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        link.classList.add("active");
+    });
+});
+
+
+// NÚT LÊN ĐẦU TRANG
+const backToTop =
+    document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+    backToTop.style.display =
+        window.scrollY > 350 ? "block" : "none";
+});
+
+backToTop.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+// LƯU CV PDF
+document.getElementById("printCV")
+    .addEventListener("click", function() {
+        revealElements.forEach(function(element) {
+            element.classList.add("visible");
+        });
+
+        showSkills();
+        window.print();
+    });
+
+
+// FORM LIÊN HỆ
+document.getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const message =
+            document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        const subject =
+            "Liên hệ Portfolio - " + name;
+
+        const body =
+            "Họ tên: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            "Nội dung:\n" + message;
+
+        window.location.href =
+            "mailto:datnt0886@ut.edu.vn" +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+    });
+
+</script>
+</body>
+</html>

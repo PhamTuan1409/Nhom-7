@@ -728,13 +728,13 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
                 extend: {
                     colors: {
                         brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
+                            50: '#fff1f7',
+                            100: '#ffe4ef',
+                            500: '#f472b6',
+                            600: '#ec4899',
+                            700: '#db2777',
+                            800: '#be185d',
+                            900: '#9d174d',
                         }
                     },
                     fontFamily: {
@@ -756,32 +756,32 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             position: relative;
             overflow-x: hidden;
             background:
-                radial-gradient(circle at top left, rgba(59, 130, 246, 0.10), transparent 18%),
-                radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.12), transparent 20%),
-                linear-gradient(135deg, #f8fafc 0%, #f1f5f9 40%, #eef2ff 100%);
+                radial-gradient(circle at top left, rgba(251, 113, 133, 0.16), transparent 18%),
+                radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.12), transparent 20%),
+                linear-gradient(135deg, #fffafc 0%, #fff1f6 32%, #fdf2f8 100%);
         }
         body::before,
         body::after {
             content: "";
             position: fixed;
-            width: 26rem;
-            height: 26rem;
+            width: 28rem;
+            height: 28rem;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.35;
+            filter: blur(90px);
+            opacity: 0.45;
             pointer-events: none;
             z-index: 0;
             animation: floatOrbs 12s ease-in-out infinite alternate;
         }
         body::before {
             top: 4rem;
-            left: -6rem;
-            background: rgba(96, 165, 250, 0.35);
+            left: -7rem;
+            background: rgba(251, 113, 133, 0.28);
         }
         body::after {
-            right: -7rem;
+            right: -8rem;
             bottom: 5rem;
-            background: rgba(16, 185, 129, 0.28);
+            background: rgba(216, 180, 254, 0.22);
             animation-delay: 2s;
         }
         header,
@@ -801,12 +801,12 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             -webkit-backdrop-filter: blur(12px);
         }
         .glow-effect {
-            box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 25px -5px rgba(236, 72, 153, 0.45);
         }
         .hero-badge {
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+            box-shadow: 0 8px 24px rgba(236, 72, 153, 0.16);
             animation: badgePulse 2.8s ease-in-out infinite;
         }
         .hero-badge::after {
@@ -839,8 +839,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         }
         .hover-lift:hover {
             transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
-            border-color: rgba(59, 130, 246, 0.25);
+            box-shadow: 0 18px 40px rgba(244, 114, 182, 0.18);
+            border-color: rgba(244, 114, 182, 0.3);
         }
         .animate-fade-up {
             opacity: 0;
@@ -849,7 +849,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         }
         .text-gradient-animated {
             background-size: 200% 200%;
-            background-image: linear-gradient(90deg, #2563eb, #4f46e5, #0ea5e9, #2563eb);
+            background-image: linear-gradient(90deg, #ec4899, #f472b6, #fb7185, #ec4899);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -870,8 +870,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             }
         }
         @keyframes badgePulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(59,130,246,0); }
-            50% { transform: scale(1.02); box-shadow: 0 0 22px rgba(59,130,246,0.15); }
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(244,114,182,0); }
+            50% { transform: scale(1.02); box-shadow: 0 0 22px rgba(244,114,182,0.18); }
         }
         @keyframes shine {
             0% { transform: translateX(-120%); }
@@ -1036,7 +1036,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 
                                 <!-- Social Media Links -->
                                 <div class="flex justify-center gap-3 pt-2">
-                                    <a href="https://github.com" target="_blank" rel="noopener" title="GitHub Profile" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-600 dark:text-slate-300 transition-all">
+                                    <a href="https://github.com/minhthang2292006-alt" target="_blank" rel="noopener" title="GitHub Profile" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-600 dark:text-slate-300 transition-all">
                                         <i class="fab fa-github"></i>
                                     </a>
                                     <a href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn Profile" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-600 dark:text-slate-300 transition-all">
